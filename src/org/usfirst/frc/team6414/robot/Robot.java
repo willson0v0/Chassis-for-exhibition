@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team6414.robot.commands.Move;
 import org.usfirst.frc.team6414.robot.subsystems.Chassis;
+import org.usfirst.frc.team6414.robot.subsystems.Solenoid;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,6 +23,7 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	public static final Chassis chassis = new Chassis();
+	public static final Solenoid solenoid = new Solenoid();
 //    private static boolean isEnabled = false;
 
 	private Command autonomousCommand;

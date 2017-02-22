@@ -8,6 +8,8 @@ package org.usfirst.frc.team6414.robot;
  */
 public class RobotMap {
     public static final int CHASSIS_ADJUST = 2;
+    public static final int PNEUMATIC_OPEN = 7;
+    public static final int PNEUMATIC_CLOSE = 6;
     static final int STICK = 0;
 
     public static final int RIGHT_MASTER = 1;
