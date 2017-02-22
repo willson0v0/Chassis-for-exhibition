@@ -9,12 +9,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *         published under GNU Protocol
  */
 public class MonitoredSystem extends Subsystem {
-
-    private Thread moniter;
+    private Thread monitor;
     private boolean isRunning = true;
 
     void threadInit(Runnable me) {
-        moniter = new Thread(() -> {
+        monitor = new Thread(() -> {
             while (isRunning) {
                 me.run();
                 try {
@@ -27,7 +26,7 @@ public class MonitoredSystem extends Subsystem {
     }
 
     public void startMonitor() {
-        moniter.start();
+        monitor.start();
     }
 
     public void stopMonitor() {
