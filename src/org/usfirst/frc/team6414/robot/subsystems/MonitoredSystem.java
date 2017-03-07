@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class MonitoredSystem extends Subsystem {
     private Thread monitor;
+
     private boolean isRunning = true;
 
     void threadInit(Runnable me) {

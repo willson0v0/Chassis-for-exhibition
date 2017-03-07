@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc.team6414.robot.commands.Autonomous;
 import org.usfirst.frc.team6414.robot.commands.Move;
 import org.usfirst.frc.team6414.robot.subsystems.Chassis;
 import org.usfirst.frc.team6414.robot.subsystems.Solenoid;
@@ -24,14 +25,10 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static final Chassis chassis = new Chassis();
 	public static final Solenoid solenoid = new Solenoid();
-//    private static boolean isEnabled = false;
 
 	private Command autonomousCommand;
 	private SendableChooser<Command> chooser = new SendableChooser<>();
 
-//    public static boolean staticIsEnabled() {
-//        return isEnabled;
-//    }
 
 	public static double limit(double min, double max, double input) {
 		return input > max ? max
@@ -47,8 +44,8 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		oi = new OI();
 		chooser.addDefault("Default Auto", new Move());
-//		 chooser.addObject("My Auto", new MyAutoCommand());
-//		SmartDashboard.putData("Auto mode", chooser);
+		 chooser.addObject("My Auto", new Autonomous());
+		SmartDashboard.putData("Auto mode", chooser);
 
 		UsbCamera cam = CameraServer.getInstance().startAutomaticCapture();
 		cam.setResolution(640, 480);
